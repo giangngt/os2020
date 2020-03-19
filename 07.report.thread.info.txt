@@ -1,0 +1,11 @@
+Show number of threads for process firefox or google-chrome, choose one of two ways
+ps with NLWP (number of lightweight processes) option
+•e.g. ps -o nlwp <processId>
+
+Command used: 
+				ps -o nlwp <10553>
+(10553 is processid of firefox retrieved by using the command 'pidof firefox')
+
+Output: 
+NLWP
+  26
