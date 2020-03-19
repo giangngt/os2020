@@ -1,0 +1,19 @@
+Show number of context switches for process systemd using two files (two different sets of commands)
+
+1/ Command: grep systemd /proc/sched_debug
+
+ Ssystemd-journal   323       135.238275      2218   119         0.000000       545.049231         0.000000 0 0 /autogroup-8
+ Ssystemd-resolve   523       136.612529      1507   120         0.000000       475.296298         0.000000 0 0 /autogroup-28
+ S systemd-logind   576        86.370658      5000   120         0.000000       226.320982         0.000000 0 0 /autogroup-35
+ S  systemd-udevd   350       727.461538      1384   120         0.000000       677.792828         0.000000 0 0 /autogroup-17
+ S        systemd   963       151.865455       217   120         0.000000       257.685770         0.000000 0 0 /autogroup-73
+ S        systemd  2418        59.414040       488   120         0.000000       388.960772         0.000000 0 0 /autogroup-104
+ S        systemd     1      1488.479418    125242   120         0.000000      7066.070876         0.000000 0 0 /autogroup-2
+ Ssystemd-timesyn   520        14.493367       116   120         0.000000        50.418882         0.000000 0 0 /autogroup-26
+
+2/ Command grep switches /proc/10645/sched
+(The process id 10645 is retrieved by using the command 'pidof firefox')
+
+nr_switches                                  :                  273
+nr_voluntary_switches                        :                  234
+nr_involuntary_switches                      :                   39
